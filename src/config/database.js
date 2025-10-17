@@ -9,10 +9,10 @@ const DATABASE_HOST = process.env.DATABASE_HOST;
 const sequelize = new Sequelize({
   dialect: MySqlDialect,
   database: DATABASE_NAME,
-  user: DATABASE_USER,
+  username: DATABASE_USER, 
   password: DATABASE_PASSWORD,
   host: DATABASE_HOST,
-  port: 3000,
+  port: 3306, 
 });
 
 export default sequelize;
