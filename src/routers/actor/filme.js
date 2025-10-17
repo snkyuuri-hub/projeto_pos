@@ -1,14 +1,11 @@
 import express from 'express';
-import filmeController from '../../controllers/filme/filmeController.js';
+import filmeController from '../../controllers/actor/filmeController.js';
 
-const routerFilme = express.Router();
+const router = express.Router();
 
-routerFilme.post("/filme", filmeController.createFilmeHandler);
+router.post("/filme", filmeController.createFilmeHandler);
+router.get("/filme/:id", filmeController.getFilme);
+router.get("/filmes", filmeController.getFilmes);
+router.delete("/filme/:id", filmeController.destroyFilmeHandler);
 
-routerFilme.get("/filme/:id", filmeController.getFilme);
-
-routerFilme.get("/filmes", filmeController.getFilmes);
-
-routerFilme.delete("/filme/:id", filmeController.destroyFilmeHandler);
-
-export default routerFilme;
+export default router;

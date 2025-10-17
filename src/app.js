@@ -1,13 +1,12 @@
 import express from 'express';
-import routerActor from './routers/actor/actor.js';
-import routerFilme from './routers/filme/filme.js';
-import logger from './src/middlewares/logger.js';
+import router from './routers/actor/filme.js';
 
 const app = express();
 
 app.use(express.json());
-app.use(logger); // Middleware 
-app.use(routerActor);
-app.use(routerFilme);
+app.use(router);
 
-export default app;
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
+});

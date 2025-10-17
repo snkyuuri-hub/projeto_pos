@@ -1,15 +1,19 @@
 import Filme from "../../model/filme/filmeModel.js";
 
 const destroyFilme = async (id) => {
-  const filme = await Filme.destroy({
-    where: { id }
-  });
+  try {
+    const filme = await Filme.destroy({
+      where: { id }
+    });
 
-  if (!filme) {
+    if (filme === 0) {
+      return false;
+    }
+
+    return true;
+  } catch (error) {
     return false;
   }
-
-  return filme;
 };
 
 export default destroyFilme;

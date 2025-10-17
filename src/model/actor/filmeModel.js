@@ -1,7 +1,12 @@
-import { DataTypes } from "@sequelize/core";
-import sequelize from "../../config/database.js";
+import { DataTypes } from 'sequelize';
+import sequelize from '../../config/database.js';
 
-const Filme = sequelize.define('filme', {
+const Filme = sequelize.define('Filme', {
+  id: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true
+  },
   nome: {
     type: DataTypes.STRING,
     allowNull: false
@@ -18,6 +23,9 @@ const Filme = sequelize.define('filme', {
     type: DataTypes.TEXT,
     allowNull: false
   }
+}, {
+  tableName: 'filmes',
+  timestamps: true
 });
 
 export default Filme;

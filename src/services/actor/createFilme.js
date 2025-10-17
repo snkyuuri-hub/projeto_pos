@@ -9,12 +9,9 @@ const createFilme = async (filme) => {
       descricao: filme.descricao
     });
 
-    if (!novoFilme) {
-      return false;
-    }
-
     return novoFilme;
   } catch (error) {
+    console.log(error);
     return false;
   }
 };
