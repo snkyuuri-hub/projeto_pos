@@ -1,10 +1,10 @@
 import express from 'express';
-import router from './routers/actor/filme.js';
+import router from './routers/actor/filme.js'; 
 
 const app = express();
 
 app.use(express.json());
-app.use(router);
+app.use(router); 
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

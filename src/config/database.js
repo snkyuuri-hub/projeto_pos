@@ -1,18 +1,14 @@
-import { Sequelize } from '@sequelize/core';
-import { MySqlDialect } from '@sequelize/mysql';
+import { Sequelize } from 'sequelize';
 
-const DATABASE_NAME = process.env.DATABASE_NAME;
-const DATABASE_USER = process.env.DATABASE_USER;
-const DATABASE_PASSWORD = process.env.DATABASE_PASSWORD;
-const DATABASE_HOST = process.env.DATABASE_HOST;
-
-const sequelize = new Sequelize({
-  dialect: MySqlDialect,
-  database: DATABASE_NAME,
-  username: DATABASE_USER, 
-  password: DATABASE_PASSWORD,
-  host: DATABASE_HOST,
-  port: 3306, 
-});
+const sequelize = new Sequelize(
+  process.env.DATABASE_NAME,    
+  process.env.DATABASE_USER,      
+  process.env.DATABASE_PASSWORD, 
+  {
+    host: process.env.DATABASE_HOST,
+    dialect: 'mysql',
+    port: 3306
+  }
+);
 
 export default sequelize;
