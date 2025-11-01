@@ -1,4 +1,4 @@
-import Filme from "../../model/filme/filmeModel.js";
+import Filme from "../../model/actor/actor.js";
 
 const getAll = async () => {
   const filmes = await Filme.findAll();

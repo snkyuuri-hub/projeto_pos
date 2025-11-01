@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import type { Request, Response } from 'express';
 import Actor from '../models/actor.model';
 
 export const createActor = async (req: Request, res: Response) => {

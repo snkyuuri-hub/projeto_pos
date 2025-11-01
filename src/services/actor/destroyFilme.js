@@ -1,4 +1,4 @@
-import Filme from "../../model/filme/filmeModel.js";
+import Filme from "../../model/actor/actor.js";
 
 const destroyFilme = async (id) => {
   try {

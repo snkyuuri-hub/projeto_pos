@@ -1,9 +1,9 @@
-import model from "../../model/index.js";
+import Filme from "../../model/actor/actor.js";
 
 const getOne = async (id) => {
   try {
-    const filme = await model.Filme.findOne({
-      where: { id: id }
+    const filme = await Filme.findOne({
+      where: { id }
     });
 
     if (!filme) {
